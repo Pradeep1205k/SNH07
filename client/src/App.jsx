@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 import Single from "./pages/Single";
 import Write from "./pages/Write";
 import TaskSchedule from "./pages/TaskSchedule";
+import SlaveHome from "./pages/Shome";
 
 const Layout = () => {
 	return (
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
 			{ path: "/write", element: <Write /> },
 			{ path: "/post/:postId", element: <Single /> },
 			{ path: "/taskSchedule", element: <TaskSchedule /> },
+			{ path: "/slaveHome", element: <SlaveHome/> },
 		],
 	},
 	{

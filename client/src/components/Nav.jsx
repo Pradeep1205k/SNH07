@@ -22,7 +22,7 @@ export default function Nav() {
 	return (
 		<nav className="bg-white flex items-center justify-between w-screen px-10 md:px-24 h-16  top-0 fixed">
 			<div>
-				<span className="text-base font-bold text-primary-300 ml-3 cursor-pointer md:text-2xl">
+				<span className="text-base font-bold text-indigo-500 ml-3 cursor-pointer md:text-2xl">
 					<Link to="/">AVINYA Tech</Link>
 				</span>
 			</div>

@@ -1,3 +1,17 @@
+/* Your CSS file */
+
+/* @import statements should come first */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;...");
+
+/* Followed by Tailwind's imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles */
+/* ... */
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

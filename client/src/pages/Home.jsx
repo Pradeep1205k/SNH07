@@ -160,22 +160,52 @@
 // 		</div>
 // 	);
 // }
-
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
+  let users = [{name: "Shailesh", sal: 90000},{name: "Rahul", sal: 50000}]
+  const navigate = useNavigate();
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div className='flex justify-center items-center h-screen'>
       <div className='flex flex-col items-center'>
-        <button className='bg-blue-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg mb-4 w-[30rem] h-[7rem] text-3xl'>
+        <button onClick={() => {navigate("taskSchedule")}} className='bg-blue-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg mb-4 w-[30rem] h-[7rem] text-3xl'>
           Task Schedule
         </button>
-        <button className='bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg w-[30rem] h-[7rem] text-3xl'>
+        <button onClick={togglePopup} className='bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg w-[30rem] h-[7rem] text-3xl'>
           Salary Calculation
         </button>
+        {showPopup && (
+          <div className="fixed inset-0 flex items-center justify-center z-50">
+            <div className="absolute inset-0 bg-gray-800 opacity-50" onClick={togglePopup}></div>
+            <div className="z-50 bg-white p-8 rounded-lg shadow-xl">
+              {/* Popup content */}
+              <h2 className="text-2xl mb-4">Salary</h2>
+              {users.map((user, index) => (
+          <div
+            key={index}
+            className='flex items-center justify-between w-[30rem]  bg-indigo-400 rounded-lg p-4 mb-8'
+          >
+            <div className='text-white font-semibold'>{user.name}</div>
+            <div className='text-white cursor-pointer' onClick={() => handleUserClick(index)}>
+              <span>₹{user.sal}</span>
+            </div>
+          </div>
+        ))}
+              <button onClick={togglePopup} className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-lg">Close</button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default Home;
+

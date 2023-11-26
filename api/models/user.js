@@ -8,6 +8,14 @@ const userSchema = new Schema({
 		required: true,
 		unique: true,
 	},
+	role: {
+		type: String,
+		required: true,
+	},
+	
+	tasks: [String]
+
+
 });
 userSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", userSchema);
