@@ -5,8 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-import Single from "./pages/Single";
-import Write from "./pages/Write";
+
 import TaskSchedule from "./pages/TaskSchedule";
 import SlaveHome from "./pages/Shome";
 
@@ -26,8 +25,8 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{ path: "/", element: <Home /> },
-			{ path: "/write", element: <Write /> },
-			{ path: "/post/:postId", element: <Single /> },
+			
+			
 			{ path: "/taskSchedule", element: <TaskSchedule /> },
 			{ path: "/slaveHome", element: <SlaveHome/> },
 		],
